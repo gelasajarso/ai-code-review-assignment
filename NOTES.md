@@ -1,15 +1,7 @@
-# Notes (Optional)
+# Notes
 
-This file is optional.
+- Email validation in Task 2 intentionally uses a minimal structural heuristic rather than full RFC 5322 compliance to avoid overengineering and external dependencies. The goal was to improve correctness and safety relative to the original implementation while keeping the logic reviewable and maintainable.
 
-Use it only if you want to provide **additional context** for the reviewer that does not fit cleanly in `submission_template.md`.
+- For Tasks 1 and 3, a return value of `0.0` is used when no valid items are present. This choice avoids raising exceptions and provides a predictable, safe default behavior consistent with many production analytics contexts.
 
-Examples of appropriate use:
-
-- Assumptions you made
-- Known limitations of your solution
-- Alternative approaches you considered but did not implement
-
-Do not repeat information already included in `submission_template.md`.
-
-Remove the contents of this file and write your notes.
+- Input schemas were assumed to be loosely structured collections based on the original implementations. The fixes focus on correcting core logical and safety issues without enforcing strict schema validation beyond what is necessary.
